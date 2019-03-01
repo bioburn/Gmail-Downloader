@@ -1,0 +1,24 @@
+resources
+
+https://stackoverflow.com/questions/2676545/do-i-need-response-end-in-asp-net-2-0
+
+
+
+https://www.c-sharpcorner.com/article/how-to-host-your-Asp-Net-mvc-website-on-godaddy-server/
+How to deploy to godaddy
+<customErrors mode="Off"/>
+<trust level="Full"/>
+remove compile tag
+
+https://www.godaddy.com/community/Plesk-Hosting/Problem-with-Windows-Web-Hosting-quot-this-program-is-blocked/td-p/14500
+How to fix compile error on godaddy
+
+
+https://stackoverflow.com/questions/17217077/create-zip-file-from-byte
+How to create a zip folder without saving it in memory
+
+https://stackoverflow.com/questions/13779139/writing-memorystream-to-response-object
+how to return a file in a response
+
+https://docs.microsoft.com/en-us/dotnet/api/system.web.httpresponse.binarywrite?view=netframework-4.7.2
+writing to the output buffer
