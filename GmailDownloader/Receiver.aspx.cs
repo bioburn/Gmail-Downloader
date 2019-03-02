@@ -18,11 +18,29 @@ namespace GmailDownloader
         protected void Page_Load(object sender, EventArgs e)
         {
             string code = Request.QueryString["code"];
-            if (code != null && !IsPostBack)
+            if (!IsPostBack)
             {
+                dateStart.DataBind();
+                dateEnd.DataBind();
                 //code to get new refresh token here
-                RefreshTokenBox.Text = getRefreshToken(code);
+                if(code != null)
+                {
+                    try
+                    {
+                        RefreshTokenBox.Text = getRefreshToken(code);
+
+                    }
+                    catch
+                    {
+                        
+                    }
+                }
+                    
+                
             }
+            
+
+            
             //construct the authorization url
             testLink.NavigateUrl = //"https://accounts.google.com/o/oauth2/v2/auth?client_id=316651371589-sb93p6suqkt2797vpsrv61qrtim5t9b1.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A54158%2FReceiver.aspx&scope=https%3A%2F%2Fmail.google.com%2F&access_type=offline&prompt=consent&response_type=code";
             "https://accounts.google.com/o/oauth2/v2/auth?client_id=316651371589-sb93p6suqkt2797vpsrv61qrtim5t9b1.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fkingsstoreinternational.com%2Freceiver&scope=https%3A%2F%2Fmail.google.com%2F&access_type=offline&prompt=consent&response_type=code";
@@ -122,7 +140,12 @@ namespace GmailDownloader
                         string epochDate = nestedMessageObject.SelectToken("internalDate").ToString();
                         DateTime convertedDate = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(long.Parse(epochDate));
                         DateTime now = DateTime.Today.AddDays(-1);
-                        if (DateTime.Compare(now, convertedDate) > 0)
+                        DateTime start = dateStart.SelectedDate.ToUniversalTime();
+                        DateTime end = dateEnd.SelectedDate.ToUniversalTime();
+                        end = end.AddDays(1);
+                        var Compare1 = DateTime.Compare(start, convertedDate) < 0;
+                        var Compare2 = DateTime.Compare(end, convertedDate) > 0;
+                        if (!(Compare1 && Compare2))
                         {
                             NextPageExists = false;
                             break;
@@ -148,6 +171,12 @@ namespace GmailDownloader
                 }
 
                 //return the attachmentslist as a zip 
+
+                
+
+                if (AttachmentsList.Count <= 0)
+                    return ids;
+
 
                 HttpResponse response = HttpContext.Current.Response;
                 //string filePath = zipLoc;
@@ -189,7 +218,7 @@ namespace GmailDownloader
                 }
 
                 //stop here
-
+                
                 return ids;
 
             }

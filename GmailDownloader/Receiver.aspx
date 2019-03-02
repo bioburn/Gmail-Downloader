@@ -11,7 +11,7 @@
             <br />
             <br />
             <div class="col-lg-12">
-                <asp:HyperLink ID="testLink" runat="server" Text="For First Time Authorization Click Here"></asp:HyperLink>
+                <asp:HyperLink ID="testLink" runat="server" CssClass="btn btn-success" Text="For First Time Authorization Click Here"></asp:HyperLink>
             </div>
 
             <br />
@@ -25,13 +25,23 @@
                 <asp:Button ID="DownloadAttachments" CssClass="btn btn-primary" runat="server" Text="Download" OnClick="DownloadAttachments_Click" />
 
             </div>
+
+            <div class="col-sm-12">
+                Start Date:<asp:Calendar runat="server" ID="dateStart" SelectedDate="<%# DateTime.Today %>"> </asp:Calendar>
+                End Date:<asp:Calendar runat="server" ID="dateEnd" SelectedDate="<%# DateTime.Today %>"></asp:Calendar>
+            </div>
+            <br />
+            <div>
+                <asp:Label ID="count" runat="server"></asp:Label>
+                <br />
+            </div>
             <br />
         </div>
         <br />
         <br />
         <br />
         <br />
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             Data processed from the gmail api is not transmitted to any third party entities nor the application creator.
         </div>
         <br />
