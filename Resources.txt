@@ -22,3 +22,11 @@ how to return a file in a response
 
 https://docs.microsoft.com/en-us/dotnet/api/system.web.httpresponse.binarywrite?view=netframework-4.7.2
 writing to the output buffer
+
+
+https://www.geeksforgeeks.org/datetime-compare-method-in-c-sharp/
+comparing dates
+
+https://stackoverflow.com/questions/86408/select-current-date-by-default-in-asp-net-calendar-control
+setting default date for calendar control
+databind() on load
