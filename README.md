@@ -1,5 +1,6 @@
 # Gmail-Downloader
 Downloads all attachments from gmail inbox within last 48 hours into a zip file
+Author - Jackey Lau
 
 What it does:
 This application uses the gmail api to retrieve all attached files from a user's inbox received within the last 48 hours and saves it as a zip file.
