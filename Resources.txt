@@ -11,6 +11,7 @@ How to deploy to godaddy
 remove compile tag
 
 https://www.godaddy.com/community/Plesk-Hosting/Problem-with-Windows-Web-Hosting-quot-this-program-is-blocked/td-p/14500
+https://stackoverflow.com/questions/32780315/could-not-find-a-part-of-the-path-bin-roslyn-csc-exe/38668274#38668274
 How to fix compile error on godaddy
 
 
@@ -30,3 +31,7 @@ comparing dates
 https://stackoverflow.com/questions/86408/select-current-date-by-default-in-asp-net-calendar-control
 setting default date for calendar control
 databind() on load
+
+https://developers.google.com/identity/protocols/OAuth2WebServer
+https://developers.google.com/gmail/api/v1/reference/users/messages#resource
+google api stuff
